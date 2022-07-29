@@ -111,6 +111,7 @@
     </Reference>
   </ItemGroup>
 
+	<!--
   <Target Name="ILRepack" AfterTargets="Build">
     <ItemGroup>
       <InputAssemblies Include="$(TargetPath)" />
@@ -118,6 +119,7 @@
     </ItemGroup>
     <Exec Command="$(PkgILRepack)\tools\ILRepack.exe /lib:$(DalamudLibPath) /out:$(TargetDir)$(TargetFileName) @(InputAssemblies, ' ')" />
   </Target>
+-->
 
   <Target Name="LivePluginLoadCopy" AfterTargets="CleanOutDir" Condition=" '$(Configuration)' == 'Debug' ">
     <Message Text="Copying for LPL" Importance="high" />
