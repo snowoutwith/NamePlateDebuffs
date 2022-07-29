@@ -67,6 +67,22 @@
     <AssemblyVersion>0.5.7.0</AssemblyVersion>
     <FileVersion>0.5.7.0</FileVersion>
   </PropertyGroup>
+  
+  <PropertyGroup>
+		<!-- Distribution version for GitHub CI. 'release' is currently .NET 5 -->
+		<DalamudCIDist>release</DalamudCIDist>
+		<DalamudVersion>dev</DalamudVersion>
+		<DalamudLocal>../Dalamud/bin/</DalamudLocal>
+		<DalamudXIVLauncher>$(APPDATA)\XIVLauncher\addon\Hooks\$(DalamudVersion)</DalamudXIVLauncher>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AssemblySearchPaths>
+			$(AssemblySearchPaths);
+			$(DalamudLocal);
+			$(DalamudXIVLauncher);
+		</AssemblySearchPaths>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="DalamudPackager" Version="2.1.7" />
